@@ -1,0 +1,30 @@
+﻿<!-- FEATURED AGENTS -->
+<h2 class="owl-featured"><strong>Top</strong> Real Estate Agents</h2>
+
+<!--div data-plugin-options='{"itemsDesktop":[1199,4], "itemsDesktopSmall":[980,3], "itemsTablet":[684,2], "itemsMobile":[490,1], "singleItem": false, "stopOnHover":false, "autoPlay":false, "autoHeight": false, "navigation": true, "pagination": true}'>
+    <div ng-repeat="agent in featuredAgents | limitTo : 5">
+        <div class="owl-featured-item">
+            <a class="figure" ng-href="/agent/{{agent.userName}}">
+                <span><i class="fa fa-plus"></i></span>
+                <img alt="" ng-src={{agent.avatarUrl}} height="300" width="230" />
+            </a>
+            <div class="owl-featured-detail">
+                <a class="featured-title" ng-href="/agent/{{agent.userName}}">{{agent.firstName}} {{agent.lastName}}</a>
+            </div>
+        </div>
+    </div>
+</div>-->
+<!-- /FEATURED AGENTS -->
+
+<div class="row-fluid" >
+    <div class="col-lg-2" ng-repeat="agent in featuredAgents | limitTo : 5">
+        <a class="figure" ng-href="/agent/{{agent.userName}}">
+            <span><i class="fa fa-plus"></i></span>
+            <img alt="" ng-src={{agent.avatarUrl}} height="300" width="230" />
+        </a>
+        <div class="">
+            <a class="featured-title" ng-href="/agent/{{agent.userName}}">{{agent.firstName}} {{agent.lastName}}</a>
+        </div>
+    </div>
+    
+</div>

@@ -1,0 +1,197 @@
+<ng-include src="'app/layout/agentheader.html'"></ng-include>
+
+
+<!-- CONTENT -->
+    <section>
+				<div class="container">
+
+					<!-- options -->
+					<div class="row shop-top-options">
+
+						<div class="col-sm-9 col-md-9">
+                            <h2><strong><i class="fa fa-search"></i></strong></h2>
+						</div>
+
+						<div class=" col-sm-3 col-md-3">
+
+							<select class="form-control pointer fsize13 pull-right" name="orderby">
+								<option value="menu_order" selected="selected">Default sorting</option>
+								<option value="popularity">Sort by popularity</option>
+								<option value="rating">Sort by average rating</option>
+								<option value="date">Sort by date</option>
+								<option value="price">Sort by price: low to high</option>
+								<option value="price-desc">Sort by price: high to low</option>
+							</select>
+
+						</div>
+					</div>
+					<!-- /options -->
+
+					<div class="row">
+
+						<div class="col-md-3 hidden-sm">
+
+							<hr class="half-margins invisible" />
+
+
+							<div class="sky-form shop-filter">
+								<h4>Price</h4>
+								<label class="radio">
+									<input type="radio" name="radio" checked="checked" />
+									<i></i> Any Price
+								</label>
+								<label class="radio">
+									<input type="radio" name="radio" />
+									<i></i> $0 - $50
+								</label>
+								<label class="radio">
+									<input type="radio" name="radio" />
+									<i></i> $50 - $100
+								</label>
+								<label class="radio">
+									<input type="radio" name="radio" />
+									<i></i> $100 - $500
+								</label>
+								<label class="radio">
+									<input type="radio" name="radio" />
+									<i></i> $500 - $1000
+								</label>
+								<label class="radio">
+									<input type="radio" name="radio" />
+									<i></i> $1000 - $1500
+								</label>
+								<label class="radio">
+									<input type="radio" name="radio" />
+									<i></i> $1500 - $2000
+								</label>
+								<label class="radio">
+									<input type="radio" name="radio" />
+									<i></i> $2000+
+								</label>
+							</div>
+
+							<div class="sky-form shop-filter">
+								<h4>Brand</h4>
+								<label class="checkbox">
+									<input type="checkbox" name="checkbox" />
+									<i></i> Armani
+								</label>
+								<label class="checkbox">
+									<input type="checkbox" name="checkbox" />
+									<i></i>Gucci
+								</label>
+								<label class="checkbox">
+									<input type="checkbox" name="checkbox" />
+									<i></i>Nike
+								</label>
+								<label class="checkbox">
+									<input type="checkbox" name="checkbox" />
+									<i></i>Ralph Lauren
+								</label>
+								<label class="checkbox">
+									<input type="checkbox" name="checkbox" />
+									<i></i>Adidas
+								</label>
+								<label class="checkbox">
+									<input type="checkbox" name="checkbox" />
+									<i></i>Lotto
+								</label>
+								<label class="checkbox">
+									<input type="checkbox" name="checkbox" />
+									<i></i>Fila
+								</label>
+								<label class="checkbox">
+									<input type="checkbox" name="checkbox" />
+									<i></i>Boss
+								</label>
+								<label class="checkbox">
+									<input type="checkbox" name="checkbox" />
+									<i></i>Panasonic
+								</label>
+								<label class="checkbox">
+									<input type="checkbox" name="checkbox" />
+									<i></i>Technics
+								</label>
+							</div>
+
+							<div class="sky-form shop-filter">
+								<h4>Color</h4>
+								<label class="checkbox">
+									<input type="checkbox" name="checkbox" />
+									<i></i><span class="color-bullet-filter" style="background-color:#333333;"></span> Black (122)
+								</label>
+								<label class="checkbox">
+									<input type="checkbox" name="checkbox" />
+									<i></i><span class="color-bullet-filter" style="background-color:#1664c4;"></span> Blue (12)
+								</label>
+								<label class="checkbox">
+									<input type="checkbox" name="checkbox" />
+									<i></i><span class="color-bullet-filter" style="background-color:#c00707;"></span> Red  (75)
+								</label>
+								<label class="checkbox">
+									<input type="checkbox" name="checkbox" />
+									<i></i><span class="color-bullet-filter" style="background-color:#6fcc14;"></span> Green  (45)
+								</label>
+								<label class="checkbox">
+									<input type="checkbox" name="checkbox" />
+									<i></i><span class="color-bullet-filter" style="background-color:#943f00;"></span> Brown  (91)
+								</label>
+								<label class="checkbox">
+									<input type="checkbox" name="checkbox" />
+									<i></i><span class="color-bullet-filter" style="background-color:#ff1cae;"></span> Pink  (566)
+								</label>
+								<label class="checkbox">
+									<input type="checkbox" name="checkbox" />
+									<i></i><span class="color-bullet-filter" style="background-color:#f5f5dc;"></span> Beige  (321)
+								</label>
+								<label class="checkbox">
+									<input type="checkbox" name="checkbox" />
+									<i></i><span class="color-bullet-filter" style="background-color:#adadad;"></span> Grey  (22)
+								</label>
+								<label class="checkbox">
+									<input type="checkbox" name="checkbox" />
+									<i></i><span class="color-bullet-filter" style="background-color:#5d00dc;"></span> Purple (65)
+								</label>
+							</div>
+
+						</div>
+
+						<div class="col-md-9">
+
+
+							<!-- PRODUCT LIST -->
+							<div class="row">
+
+                                <div class="col-md-4 col-sm-4" dir-paginate="apartment in agentApartments| itemsPerPage: pageSize" total-items="totalApartments">
+                                    <!-- item -->
+                                    <a class=" shop-item-list" ng-href="/apartment/{{apartment.id}}">
+                                        <figure>
+                                            <!-- image -->
+                                            <img class="img-responsive" ng-src="assets/{{apartment.mainImage.imageUrl}}" alt="" />
+                                        </figure><!-- /image -->
+                                    </a>
+                                    <span class="shop-stock-info stock-no">
+                                        <!-- stock -->
+                                        <i class="fa fa-times"></i>{{apartment.mainImage.shortDescription}}
+                                    </span><!-- /stock -->
+                                    <div class="product-info">
+                                        <!-- title and price -->
+                                        <h2>
+                                            <span class="product-name"></span> {{apartment.numOfRooms}}
+                                            <span class="bold">{{apartment.price}}</span> <span class="line-through">$1200</span>
+                                        </h2>
+                                    </div><!-- /title and price -->
+                                </div><!-- /item -->
+							</div>
+							<!-- /PRODUCT LIST -->
+
+							<!-- PAGINATION -->
+                            <dir-pagination-controls on-page-change="pageChanged(newPageNumber)"></dir-pagination-controls>
+							<!-- /PAGINATION -->
+						</div>
+
+					</div>
+
+				</div>
+			</section>
+<!-- /CONTENT -->

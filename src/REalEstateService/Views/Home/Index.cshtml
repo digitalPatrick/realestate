@@ -1,0 +1,148 @@
+﻿<!DOCTYPE html>
+<!--[if IE 8]>			<html class="ie ie8"> <![endif]-->
+<!--[if IE 9]>			<html class="ie ie9"> <![endif]-->
+<!--[if gt IE 9]><!-->
+<html ng-app="app">
+<!--<![endif]-->
+
+<head>
+    <style>
+        /* This helps the ng-show/ng-hide animations start at the right place. */
+        /* Since Angular has this but needs to load, this gives us the class early. */
+        .ng-hide {
+            display: none !important;
+        }
+    </style>
+
+    <base href="/">
+    <meta charset="utf-8" />
+    <title data-ng-bind="title">DigitalPatrick</title>
+    <meta name="keywords" content="HTML5,CSS3,Template" />
+    <meta name="description" content="" />
+    <meta name="Author" content="Leon PAtrick [www.digitalpatrick.com]" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+
+    <!-- mobile settings -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=0" />
+
+
+    <script>
+        // Must be first. IE10 mobile viewport fix
+        if ("-ms-user-select" in document.documentElement.style && navigator.userAgent.match(/IEMobile\/10\.0/)) {
+            var msViewportStyle = document.createElement("style");
+            var mq = "@@-ms-viewport{width:auto!important}";
+            msViewportStyle.appendChild(document.createTextNode(mq));
+            document.getElementsByTagName("head")[0].appendChild(msViewportStyle);
+        }
+
+
+    </script>
+
+    <!-- CORE CSS -->
+    <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="lib/font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <link href="assets/plugins/magnific-popup/magnific-popup.css" rel="stylesheet" />
+    <link href="lib/toastr/toastr.css" rel="stylesheet" />
+    <link href="css/sky-forms.css" rel="stylesheet" />
+
+
+
+    <link href="assets/plugins/magnific-popup/magnific-popup.css" rel="stylesheet" type="text/css" />
+
+
+    <!-- THEME CSS -->
+    <link href="css/essentials.css" rel="stylesheet" />
+    <link href="css/layout.css" rel="stylesheet" />
+    <link href="css/header-3.css" rel="stylesheet" />
+    <link href="css/footer-default.css" rel="stylesheet" />
+    <link href="css/colorscheme/green.css" rel="stylesheet" />
+    <link href="css/mystyles.css" rel="stylesheet" type="text/css" />
+
+
+    <script src="http://ajax.aspnetcdn.com/ajax/mobileservices/MobileServices.Web-1.2.5.min.js"></script>
+
+
+    <!--[if lte IE 8]>
+    <script src="assets/plugins/respond.js"></script>
+    <![endif]-->
+
+</head>
+<body class="smoothscroll">
+    @await Html.PartialAsync("_TopBar")
+
+
+    <ng-view autoscroll="true"></ng-view>
+
+    @await Html.PartialAsync("_FooterPartial")
+
+    <a href="#" id="toTop"></a>
+    <!-- inject-vendor:js -->
+    <script src="lib/jquery/js/jquery.min.js"></script>
+    <script src="assets/plugins/jquery.isotope.js"></script>
+    <script src="assets/plugins/masonry.js"></script>
+    <script src="lib/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/scripts.js"></script>
+    <script src="lib/toastr/toastr.js"></script>
+
+    <!--angular-->
+    <script src="lib/angular/angular.js"></script>
+    <script src="lib/angular-route/angular-route.js"></script>
+    <script src="lib/angular-sanitize/angular-sanitize.js"></script>
+    <script src="lib/angular-resource/angular-resource.js"></script>
+    <script src="lib/angular-messages/angular-messages.js"></script>
+    <script src="lib/lodash/lodash.compat.js"></script>
+
+    <!-- third party angular directives -->
+    <script src="lib/angular-load/angular-load.js"></script>
+    <script src="lib/angular-azure-mobile-service/angular-azure-mobile-service.js"></script>
+    <script src="lib/angular-utils-pagination/dirPagination.js"></script>
+    <script src="lib/angular-google-maps/angular-google-maps.js"></script>
+    <script src="lib/angular-socialshare/angular-socialshare.js"></script>
+
+    <!-- javascript files -->
+    <script src="lib/modernizr/modernizr.js"></script>
+
+
+
+    <!-- Bootstrapping -->
+    <script src="app/app.module.js"></script>
+
+    <!-- core modules -->
+    <script src="app/core/core.module.js"></script>
+    <script src="app/core/config.js"></script>
+    <script src="app/core/constants.js"></script>
+    <script src="app/core/route.config.js"></script>
+
+    <!-- Reusable Blocks/Modules -->
+    <script src="app/blocks/exception/exception.module.js"></script>
+    <script src="app/blocks/exception/exception-handler.provider.js"></script>
+    <script src="app/blocks/exception/exception.js"></script>
+    <script src="app/blocks/logger/logger.module.js"></script>
+    <script src="app/blocks/logger/logger.js"></script>
+
+    <!-- layout -->
+    <script src="app/layout/layout.module.js"></script>
+    <script src="app/layout/layout.js"></script>
+
+    <!-- home -->
+    <script src="app/home/home.module.js"></script>
+    <script src="app/home/home.js"></script>
+
+    <!-- layout -->
+    <script src="app/layout/layout.module.js"></script>
+    <script src="app/layout/layout.js"></script>
+
+    <!-- contact -->
+    <script src="app/contact/contact.module.js"></script>
+    <script src="app/contact/contact.js"></script>
+
+    <!-- Agent -->
+    <script src="app/AgentLandingPage/agent.module.js"></script>
+    <script src="app/AgentLandingPage/agent.js"></script>
+
+    <!-- singleview -->
+    <script src="app/singleview/singleview.module.js"></script>
+    <script src="app/singleview/singleview.js"></script>
+    <!-- endinject -->
+</body>
+</html>

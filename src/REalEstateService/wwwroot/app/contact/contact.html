@@ -1,0 +1,142 @@
+<ng-include src="'app/layout/mainheader.html'"></ng-include>
+ 
+   <!-- PAGE TOP -->
+			<section class="page-title">
+				<div class="container">
+
+					<header>
+
+						<ul class="breadcrumb"><!-- breadcrumb -->
+							<li><a href="/">Home</a></li>
+							<li class="active">Contact</li>
+						</ul><!-- /breadcrumb -->
+
+						<h2><!-- Page Title -->
+							<strong>Contact</strong>
+						</h2><!-- /Page Title -->
+
+					</header>
+
+				</div>			
+			</section>
+			<!-- /PAGE TOP -->
+    
+
+    <!-- CONTENT -->
+    <section>
+        <div class="container">
+
+            <div class="row">
+
+                <!-- FORM -->
+                <div class="col-md-9">
+                    <div class="margin-bottom60">
+                        <ui-gmap-google-map center='vm.map.center' zoom='vm.map.zoom' options="vm.options" class="angular-google-map-container">
+                            <ui-gmap-marker coords="vm.marker.coords" idkey="vm.marker.id"></ui-gmap-marker>
+                        </ui-gmap-google-map>
+                    </div>
+                    
+
+                    <h3>Drop us a line or just say <strong><em>Hello!</em></strong></h3>
+
+                    <form name="contactForm" novalidate ng-submit="vm.submit()">
+                        <div class="row">
+                            <div class="form-group">
+                                <div class="col-md-6">
+                                    <label>Full Name *</label>
+                                    <input class="form-control"
+                                           type="text" 
+                                           name="clientName" 
+                                           ng-model="vm.clientName" 
+                                           ng-minlength="5"
+                                           ng-maxlength="100" 
+                                           required />
+                                    <div class="error-messages" ng-if="vm.interacted(contactForm.clientName)" ng-messages="contactForm.clientName.$error" ng-messages-include="contact/error-messages.html">
+
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <label>E-mail Address *</label>
+                                    <input class="form-control"
+                                           type="email"
+                                           name="clientEmail"
+                                           ng-model="vm.clientEmail"
+                                           ng-minlength="7"
+                                           ng-maxlength="50"
+                                           required />
+                                    <div class="error-messages" ng-if="vm.interacted(contactForm.clientEmail)" ng-messages="contactForm.clientEmail.$error" ng-messages-include="contact/error-messages.html">
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group">
+                                <div class="col-md-12">
+                                    <label>Subject</label>
+                                    <input class="form-control"
+                                           type="text" value="" 
+                                           name="clientSubject" 
+                                           ng-model="clientSubject">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group">
+                                <div class="col-md-12">
+                                    <label>Message *</label>
+                                    <textarea class="form-control"
+                                              name="clientTextarea"
+                                              ng-model="clientTextarea"
+                                              ng-minlength="10"
+                                              ng-maxlength="5000"
+                                              rows="10" 
+                                              required /></textarea>
+                                    <div class="error-messages" ng-if="vm.interacted(contactForm.clientTextarea)" ng-messages="contactForm.clientTextarea.$error" ng-messages-include="contact/error-messages.html">
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <input type="submit" class="btn btn-primary btn-lg" />
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <!-- /FORM -->
+                <!-- INFO -->
+                <div class="col-md-3">
+
+                    <h2>Visit Us</h2>
+
+                    <p>
+                        Come in and talk to us today and find out how we can get your website started for only 3 cups of coffe per month.
+                    </p>
+
+                    <div class="divider half-margins"><!-- divider --></div>
+
+                    <p>
+                        <span class="block"><strong><i class="fa fa-map-marker"></i> Address:</strong> 10620 N 26th Street, Tampa, Florida</span>
+                        <span class="block"><strong><i class="fa fa-phone"></i> Phone:</strong> <a href="tel:813-300-8033">813-300-8033</a></span>
+                        <span class="block"><strong><i class="fa fa-envelope"></i> Email:</strong> <a href="mailto:digitalpatrick@outlook.com">digitalpatrick@outlook.com</a></span>
+                    </p>
+
+                    <div class="divider half-margins"><!-- divider --></div>
+
+                    <h4 class="font300">Business Hours</h4>
+                    <p>
+                        <span class="block"><strong>Monday - Friday:</strong> 12pm to 6pm</span>
+                        <span class="block"><strong>Saturday:</strong> 11am to 5pm</span>
+                        <span class="block"><strong>Sunday:</strong> Closed</span>
+                    </p>
+
+                </div>
+                <!-- /INFO -->
+
+            </div>
+
+        </div>
+    </section>
+    <!-- /CONTENT -->
