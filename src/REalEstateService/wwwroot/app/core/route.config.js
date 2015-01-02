@@ -15,6 +15,8 @@
                 templateUrl: 'app/contact/contact.html',
                 controller: 'contactCtrl as vm',
                 activetab: 'contact'
+            }).when('/agentapp', {
+                templateUrl: 'app/agentapp/app.html',
             })
             .when('/services', {
                 templateUrl: 'app/singleview/services.html',

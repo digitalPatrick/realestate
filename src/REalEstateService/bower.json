@@ -13,13 +13,14 @@
         "bootstrap": "~3.0.0",
         "font-awesome": "~4.2.0",
         "jquery": "~1.10.2",
-        "jquery-validation": "~1.11.1",
-        "jquery-validation-unobtrusive": "~3.2.2",
         "modernizr": "~2.8.3",
         "toastr": "~2.1.0",
         "angular-load": "~0.2.0"
     },
     "exportsOverride": {
+        "modernizr": {
+            "" : "modernizr.js"
+        },
         "font-awesome": {
             "css": "css/*.*",
             "fonts": "fonts/*.*"
@@ -31,12 +32,6 @@
         },
         "jquery": {
             "js": "jquery.{js,min.js,min.map}"
-        },
-        "jquery-validation": {
-            "": "jquery.validate.js"
-        },
-        "jquery-validation-unobtrusive": {
-            "": "jquery.validate.unobtrusive.{js,min.js}"
         }
     }
 }

@@ -18,7 +18,7 @@
     }]);
 
     core.config(function (paginationTemplateProvider) {
-        paginationTemplateProvider.setPath('lib/angular-utils-pagination/dirPagination.tpl.html')
+        paginationTemplateProvider.setPath('dist/dirPagination.tpl.html')
     })
 
     core.config(toastrConfig);

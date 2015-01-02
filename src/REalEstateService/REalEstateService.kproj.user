@@ -2,5 +2,6 @@
 <Project ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <TargetKREVersion>KRE-CLR-x86.1.0.0-beta1</TargetKREVersion>
+    <AutoRefresh>true</AutoRefresh>
   </PropertyGroup>
 </Project>

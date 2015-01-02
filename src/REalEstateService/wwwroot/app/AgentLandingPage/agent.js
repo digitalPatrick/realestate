@@ -4,9 +4,9 @@
     angular.module('app.agent')
     .controller('agentCtrl', agentCtrl);
 
-    agentCtrl.$injectt = ['angularLoad', '$routeParams', '$scope', 'Azureservice', '$q', 'logger', 'uiGmapGoogleMapApi', '$location'];
+    agentCtrl.$injectt = ['angularLoad', '$routeParams', '$scope', 'Azureservice', '$q', 'logger', 'uiGmapGoogleMapApi'];
 
-    function agentCtrl(angularLoad, $routeParams, $scope, Azureservice, $q, logger, uiGmapGoogleMapApi, $location) {
+    function agentCtrl(angularLoad, $routeParams, $scope, Azureservice, $q, logger, uiGmapGoogleMapApi) {
         //var vm = this;
 
         

@@ -25,84 +25,43 @@
     <!-- mobile settings -->
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=0" />
 
+    <!-- Favicon -->
+    <link rel="icon" href="@Url.Content("favicon.ico")" />
 
-    <script>
-        // Must be first. IE10 mobile viewport fix
-        if ("-ms-user-select" in document.documentElement.style && navigator.userAgent.match(/IEMobile\/10\.0/)) {
-            var msViewportStyle = document.createElement("style");
-            var mq = "@@-ms-viewport{width:auto!important}";
-            msViewportStyle.appendChild(document.createTextNode(mq));
-            document.getElementsByTagName("head")[0].appendChild(msViewportStyle);
-        }
-
-
-    </script>
+    <!-- WEB FONTS -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700,800&amp;subset=latin,latin-ext,cyrillic,cyrillic-ext" rel="stylesheet" type="text/css" />
 
     <!-- CORE CSS -->
-    <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
-    <link href="lib/font-awesome/css/font-awesome.css" rel="stylesheet" />
-    <link href="assets/plugins/magnific-popup/magnific-popup.css" rel="stylesheet" />
-    <link href="lib/toastr/toastr.css" rel="stylesheet" />
-    <link href="css/sky-forms.css" rel="stylesheet" />
-
-
-
-    <link href="assets/plugins/magnific-popup/magnific-popup.css" rel="stylesheet" type="text/css" />
+    <link href="dist/css/core.css" rel="stylesheet" />
+    <link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
 
 
     <!-- THEME CSS -->
-    <link href="css/essentials.css" rel="stylesheet" />
-    <link href="css/layout.css" rel="stylesheet" />
-    <link href="css/header-3.css" rel="stylesheet" />
-    <link href="css/footer-default.css" rel="stylesheet" />
-    <link href="css/colorscheme/green.css" rel="stylesheet" />
-    <link href="css/mystyles.css" rel="stylesheet" type="text/css" />
+
+    <link href="dist/css/essential.css" rel="stylesheet" />
 
 
     <script src="http://ajax.aspnetcdn.com/ajax/mobileservices/MobileServices.Web-1.2.5.min.js"></script>
-
-
-    <!--[if lte IE 8]>
-    <script src="assets/plugins/respond.js"></script>
-    <![endif]-->
 
 </head>
 <body class="smoothscroll">
     @await Html.PartialAsync("_TopBar")
 
+    <div ng-view autoscroll="true">
 
-    <ng-view autoscroll="true"></ng-view>
+    </div>
 
     @await Html.PartialAsync("_FooterPartial")
 
     <a href="#" id="toTop"></a>
+
     <!-- inject-vendor:js -->
-    <script src="lib/jquery/js/jquery.min.js"></script>
-    <script src="assets/plugins/jquery.isotope.js"></script>
-    <script src="assets/plugins/masonry.js"></script>
-    <script src="lib/bootstrap/js/bootstrap.min.js"></script>
-    <script src="assets/scripts.js"></script>
-    <script src="lib/toastr/toastr.js"></script>
+    <script src="dist/js/angular.min.js"></script>
 
-    <!--angular-->
-    <script src="lib/angular/angular.js"></script>
-    <script src="lib/angular-route/angular-route.js"></script>
-    <script src="lib/angular-sanitize/angular-sanitize.js"></script>
-    <script src="lib/angular-resource/angular-resource.js"></script>
-    <script src="lib/angular-messages/angular-messages.js"></script>
-    <script src="lib/lodash/lodash.compat.js"></script>
-
-    <!-- third party angular directives -->
-    <script src="lib/angular-load/angular-load.js"></script>
     <script src="lib/angular-azure-mobile-service/angular-azure-mobile-service.js"></script>
-    <script src="lib/angular-utils-pagination/dirPagination.js"></script>
-    <script src="lib/angular-google-maps/angular-google-maps.js"></script>
-    <script src="lib/angular-socialshare/angular-socialshare.js"></script>
+    <script src="assets/scripts.js"></script>
 
-    <!-- javascript files -->
-    <script src="lib/modernizr/modernizr.js"></script>
-
-
+   
 
     <!-- Bootstrapping -->
     <script src="app/app.module.js"></script>

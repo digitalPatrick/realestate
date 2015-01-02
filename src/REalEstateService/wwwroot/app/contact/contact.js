@@ -39,10 +39,6 @@
         /**load scripts and css here **/
         angularLoad.loadScript('assets/scripts.js');
 
-     //    $scope.isActive = function (viewLocation) {
-     //    return viewLocation === $location.path();
-     //};
-
     }
 
 }());
