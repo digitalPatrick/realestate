@@ -46,6 +46,7 @@
 </head>
 <body class="smoothscroll">
     @await Html.PartialAsync("_TopBar")
+    
 
     <div ng-view autoscroll="true">
 
@@ -61,7 +62,7 @@
     <script src="lib/angular-azure-mobile-service/angular-azure-mobile-service.js"></script>
     <script src="assets/scripts.js"></script>
 
-   
+
 
     <!-- Bootstrapping -->
     <script src="app/app.module.js"></script>
@@ -79,9 +80,9 @@
     <script src="app/blocks/logger/logger.module.js"></script>
     <script src="app/blocks/logger/logger.js"></script>
 
-    <!-- layout -->
-    <script src="app/layout/layout.module.js"></script>
-    <script src="app/layout/layout.js"></script>
+    <!-- Directives -->
+    <script src="app/directives/directives.module.js"></script>
+    <script src="app/directives/directive.js"></script>
 
     <!-- home -->
     <script src="app/home/home.module.js"></script>
@@ -90,7 +91,7 @@
     <!-- layout -->
     <script src="app/layout/layout.module.js"></script>
     <script src="app/layout/layout.js"></script>
-
+    <script src="app/layout/header.js"></script>
     <!-- contact -->
     <script src="app/contact/contact.module.js"></script>
     <script src="app/contact/contact.js"></script>

@@ -9,7 +9,8 @@
         $routeProvider.when('/', {
             templateUrl: 'app/home/home.html',
             controller: 'homeCtrl',
-            activetab: 'home'
+            activetab: 'home',
+            header: 'main'
             })
             .when('/contact', {
                 templateUrl: 'app/contact/contact.html',
@@ -30,7 +31,8 @@
              .when('/agent/:agentuserName', {
                  templateUrl: 'app/agentLandingPage/agent.html',
                  controller: 'agentCtrl',
-                 activetab: 'agent'
+                 activetab: 'agent',
+                 header: 'agent'
              }).when('/agent/:agentuserName/contact', {
                  templateUrl: 'app/agentLandingPage/agentContact.html',
                  controller: 'agentCtrl',

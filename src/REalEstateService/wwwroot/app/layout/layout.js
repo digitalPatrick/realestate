@@ -5,11 +5,36 @@
         .module('app.layout')
         .controller('layoutCtrl', layoutCtrl);
 
-    layoutCtrl.$inject = ['$scope', '$route'];
+    layoutCtrl.$inject = ['$scope', '$route', '$routeParams', 'Azureservice', '$q'];
 
-    function layoutCtrl($scope, $route)
+    function layoutCtrl($scope, $route, $routeParams, Azureservice, $q)
     {
+
         $scope.isActive = $route.current.activetab;
+
+        activate();
+
+        function activate() {
+            $scope.isLoggedIn = Azureservice.isLoggedIn();
+            console.log($scope.isLoggedIn);
+            console.log(sessionStorage.loggedInUserId);
+        }
+        $scope.logout = function () {
+            Azureservice.logout();
+            $scope.isLoggedIn = false;
+        }
+
+        $scope.login = function (authProvider)
+        {
+            Azureservice.login(authProvider)
+            .then(function () {
+                console.log(sessionStorage.loggedInUser);
+                console.log('Login successful');
+                $scope.isLoggedIn = true;
+            }, function (err) {
+            console.error('Azure Error: ' + err);
+            });            
+        }
     };
 
 })();

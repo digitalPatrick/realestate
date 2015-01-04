@@ -5,12 +5,15 @@
         .module('app.home')
         .controller('homeCtrl', homeCtrl);
 
-    homeCtrl.$inject = ['angularLoad', 'logger', 'Azureservice', '$scope', '$q'];
+    homeCtrl.$inject = ['angularLoad', 'logger', 'Azureservice', '$scope', '$q', '$rootScope'];
 
-    function homeCtrl(angularLoad, logger, Azureservice, $scope, $q) 
+    function homeCtrl(angularLoad, logger, Azureservice, $scope, $q, $rootScope)
     {
 
         $scope.homePage = null;
+
+        $scope.mainheader = true;
+        $scope.agentHeader = false;
 
         
         activate();

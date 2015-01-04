@@ -246,9 +246,10 @@ angular.module('azure-mobile-service.module', [])
                 throw new Error('Azureservice.login Invalid or no oauth provider listed.');
             }
 
-            var promise = client.login(oauthProvider).then(function(){
+            var promise = client.login(oauthProvider).then(function(results){
                 //cache login 
                 sessionStorage.loggedInUser = JSON.stringify(client.currentUser);
+                sessionStorage.loggedInUserId = JSON.stringify(results.userId);
             });
             
             return wrapAzurePromiseWithAngularPromise(promise);
@@ -260,6 +261,7 @@ angular.module('azure-mobile-service.module', [])
         logout: function(){
             //clear cache
             sessionStorage.loggedInUser = null;
+            sessionStorage.loggedInUserId = null;
             client.logout();
         },
         
