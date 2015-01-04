@@ -5,9 +5,9 @@
         .module('app.layout')
         .controller('layoutCtrl', layoutCtrl);
 
-    layoutCtrl.$inject = ['$scope', '$route', '$routeParams', 'Azureservice', '$q'];
+    layoutCtrl.$inject = ['$scope', '$route', 'Azureservice'];
 
-    function layoutCtrl($scope, $route, $routeParams, Azureservice, $q)
+    function layoutCtrl($scope, $route, Azureservice)
     {
 
         $scope.isActive = $route.current.activetab;
@@ -17,8 +17,8 @@
         function activate() {
             $scope.isLoggedIn = Azureservice.isLoggedIn();
             console.log($scope.isLoggedIn);
-            console.log(sessionStorage.loggedInUserId);
         }
+
         $scope.logout = function () {
             Azureservice.logout();
             $scope.isLoggedIn = false;

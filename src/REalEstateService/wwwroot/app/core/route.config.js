@@ -10,14 +10,11 @@
             templateUrl: 'app/home/home.html',
             controller: 'homeCtrl',
             activetab: 'home',
-            header: 'main'
             })
             .when('/contact', {
                 templateUrl: 'app/contact/contact.html',
                 controller: 'contactCtrl as vm',
                 activetab: 'contact'
-            }).when('/agentapp', {
-                templateUrl: 'app/agentapp/app.html',
             })
             .when('/services', {
                 templateUrl: 'app/singleview/services.html',
@@ -31,8 +28,7 @@
              .when('/agent/:agentuserName', {
                  templateUrl: 'app/agentLandingPage/agent.html',
                  controller: 'agentCtrl',
-                 activetab: 'agent',
-                 header: 'agent'
+                 activetab: 'agent'
              }).when('/agent/:agentuserName/contact', {
                  templateUrl: 'app/agentLandingPage/agentContact.html',
                  controller: 'agentCtrl',
@@ -45,9 +41,9 @@
              .when('/faq', {
                  templateUrl: 'app/singleview/faq.html',
                  controller: 'viewCtrl'
-            }).when('/test', {
-                templateUrl: 'home/test.html',
-                controller: 'homeCtrl'
+            }).when('/settings', {
+                templateUrl: 'app/settings/settings.html',
+                activetab: 'settings'
             });
        
         $routeProvider.otherwise({redirectTo: '/'});

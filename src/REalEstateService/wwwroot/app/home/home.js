@@ -12,9 +12,6 @@
 
         $scope.homePage = null;
 
-        $scope.mainheader = true;
-        $scope.agentHeader = false;
-
         
         activate();
 

@@ -9,6 +9,7 @@
         'app.directive',
         'app.agent',
         'app.singleview',
+        'app.settings',
         'app.layout',
         'azure-mobile-service.module'
     ]);
