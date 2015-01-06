@@ -40,11 +40,12 @@
                             </a>
                         </li>
                         <li ng-class="{ active: isActive == 'settings'}" ng-show="isLoggedIn">
+                            <!--ng-show="isLoggedIn"-->
                             <a href="settings">
                                 SETTINGS <span>profile</span>
                             </a>
                         </li>
-                        <li ng-show="isLoggedIn">
+                        <li ng-show="isLoggedIn" ng-show="isLoggedIn">
                             <a href="" ng-click="logout()">
                                 LOG OUT <span>goog bye</span>
                             </a>

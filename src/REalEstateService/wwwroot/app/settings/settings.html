@@ -29,48 +29,56 @@
 
             <div class="row">
 
-                <div class="col-md-8 col-sm-6">
+                <div class="col-md-8 col-sm-8 col-xs-8">
 
                     <!-- personal settings -->
-                    <form action="#" class="sky-form boxed">
+                    <form class="sky-form boxed" name="basicinfo" novalidate>
                         <header>Personal Information</header>
 
                         <fieldset>
                             <div class="row">
-                                <section class="col col-md-6">
-                                    <label class="label">First Name</label>
+                                <section class="col col-md-6 col-sm-6 col-xs-12">
+                                    <label for="firstName" class="label">First Name</label>
                                     <label class="input">
                                         <i class="icon-append fa fa-user"></i>
-                                        <input required type="text">
+                                        <input required type="text" ng-model="personal.firstName" name="firstname">
                                         <b class="tooltip tooltip-bottom-right">Only latin characters and numbers</b>
                                     </label>
+                                    <div ng-messages="basicinfo.firstname.$error" ng-messages-include="app/layout/error-messages.html">
+                                    </div>                    
                                 </section>
-                                <section class="col col-md-6">
-                                    <label class="label">Last Name</label>
+                                <section class="col col-md-6 col-sm-6 col-xs-12">
+                                    <label for="lastname" class="label">Last Name</label>
                                     <label class="input">
                                         <i class="icon-append fa fa-user"></i>
-                                        <input required type="text">
+                                        <input required type="text" ng-model="personal.lastName" name="lastname">
                                         <b class="tooltip tooltip-bottom-right">Only latin characters and numbers</b>
                                     </label>
+                                    <div ng-messages="basicinfo.lastname.$error" ng-messages-include="app/layout/error-messages.html">
+                                    </div>
                                 </section>
                             </div>
 
                             <div class="row">
-                                <section class="col col-md-6">
-                                    <label class="label">Email</label>
+                                <section class="col col-md-6 col-sm-6 col-xs-12">
+                                    <label for="emailaddress" class="label">Email</label>
                                     <label class="input">
                                         <i class="icon-append fa fa-envelope"></i>
-                                        <input required type="text">
+                                        <input required type="email" ng-model="personal.email" name="emailaddress">
                                         <b class="tooltip tooltip-bottom-right">Valid email address</b>
                                     </label>
+                                    <div ng-messages="basicinfo.emailaddress.$error" ng-messages-include="app/layout/error-messages.html">
+                                    </div>
                                 </section>
-                                <section class="col col-md-6">
-                                    <label class="label">Phone</label>
+                                <section class="col col-md-6 col-sm-6 col-xs-12">
+                                    <label for="telephonenumber" class="label">Phone</label>
                                     <label class="input">
                                         <i class="icon-append fa fa-phone"></i>
-                                        <input type="text">
+                                        <input type="tel" ng-model="personal.telephone" name="telephonenumber">
                                         <b class="tooltip tooltip-bottom-right">Valid phone number</b>
                                     </label>
+                                    <div ng-messages="basicinfo.telephonenumber.$error" ng-messages-include="app/layout/error-messages.html">
+                                    </div>
                                 </section>
                             </div>
 
@@ -98,30 +106,30 @@
                     <!-- /personal settings -->
                 </div>
 
-                <div class="col-md-4 col-sm-6">
-
-
-                    <!-- password -->
-                    <form action="#" method="post" class="sky-form boxed">
+                <div class="col-md-4 col-sm-4 col-xs-4">
+                    <form class="sky-form boxed" name="socialInfo" novalidate>
                         <header>Social Accounts</header>
 
                         <fieldset>
 
                             <section>
-                                <label class="label">Facebook</label>
+                                <label for="fb" class="label">Facebook</label>
                                 <label class="input">
                                     <i class="icon-append fa fa-facebook"></i>
-                                    <input required type="password">
+                                    <input type="url" name="fb" ng-ur>
                                     <b class="tooltip tooltip-bottom-right">Your current password</b>
                                 </label>
+                                <div ng-messages="socialInfo.fb.$error" style="color:maroon" ng-messages-include="app/layout/error-messages.html">
+                                    <div ng-message="url">Please enter a valid url</div>
+                                </div>
                             </section>
 
                             <section>
                                 <label class="label">Twitter</label>
                                 <label class="input">
                                     <i class="icon-append fa fa-twitter"></i>
-                                    <input required type="password">
-                                    <b class="tooltip tooltip-bottom-right">Type a new password (min.3 chr.)</b>
+                                    <input required type="url">
+                                    <b class="tooltip tooltip-bottom-right">Type a valid Url</b>
                                 </label>
                             </section>
 
@@ -129,7 +137,7 @@
                                 <label class="label">Instagram</label>
                                 <label class="input">
                                     <i class="icon-append fa fa-instagram"></i>
-                                    <input required type="password">
+                                    <input required type="url">
                                     <b class="tooltip tooltip-bottom-right">Type the new password again</b>
                                 </label>
                             </section>
@@ -137,7 +145,7 @@
                                 <label class="label">Google Plus</label>
                                 <label class="input">
                                     <i class="icon-append fa fa-google-plus"></i>
-                                    <input required type="password">
+                                    <input required type="url">
                                     <b class="tooltip tooltip-bottom-right">Type the new password again</b>
                                 </label>
                             </section>
@@ -145,7 +153,7 @@
                                 <label class="label">LinkedIn</label>
                                 <label class="input">
                                     <i class="icon-append fa fa-linkedin"></i>
-                                    <input required type="password">
+                                    <input required type="url">
                                     <b class="tooltip tooltip-bottom-right">Type the new password again</b>
                                 </label>
                             </section>
@@ -163,13 +171,12 @@
 
             <div class="row">
 
-                <div class="col col-md-8">
-                    <form class="sky-form boxed">
+                <div class="col col-md-8 col-cm-md-8 col-xs-8">
+                    <form class="sky-form boxed" name="">
                         <header>Address</header>
-
                         <fieldset>
                             <div class="row">
-                                <section class="col col-md-6 col-sm-6 ">
+                                <section class="col col-md-6 col-sm-6 col-xs-6">
                                     <label class="label">Street Address</label>
                                     <label class="input">
                                         <i class="icon-append fa fa-pencil"></i>
@@ -177,7 +184,7 @@
                                         <b class="tooltip tooltip-bottom-right">Only latin characters and numbers</b>
                                     </label>
                                 </section>
-                                <section class="col col-md-6 col-sm-6">
+                                <section class="col col-md-6 col-sm-6 col-xs-6">
                                     <label class="label">Street Address 2</label>
                                     <label class="input">
                                         <i class="icon-append fa fa-pencil"></i>
@@ -188,30 +195,32 @@
                             </div>
 
                             <div class="row">
-                                <section class="col col-md-4 col-sm-4">
-                                    <label class="label">Zip Code</label>
-                                    <label class="input">
-                                        <i class="icon-append fa fa-flag-checkered"></i>
-                                        <input required type="text">
-                                        <b class="tooltip tooltip-bottom-right">Only latin characters and numbers</b>
-                                    </label>
-                                </section>
-                                <section class="col col-md-4 col-sm-4">
-                                    <label class="label">State</label>
-                                    <label class="input">
-                                        <i class="icon-append fa fa-flag-o"></i>
-                                        <input type="text">
-                                        <b class="tooltip tooltip-bottom-right">Only latin characters and numbers</b>
-                                    </label>
-                                </section>
-                                <section class="col col-md-4 col-sm-4">
-                                    <label class="label">Country</label>
-                                    <label class="input">
-                                        <i class="icon-append fa fa-flag"></i>
-                                        <input type="text">
-                                        <b class="tooltip tooltip-bottom-right">Only latin characters</b>
-                                    </label>
-                                </section>
+                                <div class="form-group">
+                                    <section class="col col-md-4 col-sm-4 col-xs-6">
+                                        <label class="label">Zip Code</label>
+                                        <label class="input">
+                                            <i class="icon-append fa fa-flag-checkered"></i>
+                                            <input required type="text">
+                                            <b class="tooltip tooltip-bottom-right">Only latin characters and numbers</b>
+                                        </label>
+                                    </section>
+                                    <section class="col col-md-4 col-sm-4 col-xs-6">
+                                        <label class="label">State</label>
+                                        <label class="input">
+                                            <i class="icon-append fa fa-flag-o"></i>
+                                            <input type="text">
+                                            <b class="tooltip tooltip-bottom-right">Only latin characters and numbers</b>
+                                        </label>
+                                    </section>
+                                    <section class="col col-md-4 col-sm-4 col-xs-6">
+                                        <label class="label">Country</label>
+                                        <label class="input">
+                                            <i class="icon-append fa fa-flag"></i>
+                                            <input type="text">
+                                            <b class="tooltip tooltip-bottom-right">Only latin characters</b>
+                                        </label>
+                                    </section>
+                                </div>
                             </div>
                         </fieldset>
 

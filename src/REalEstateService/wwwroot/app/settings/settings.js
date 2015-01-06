@@ -9,6 +9,7 @@
 
     function settingsCtrl(angularLoad, logger, Azureservice, $scope) {
 
+
         activate();
 
         function activate() {

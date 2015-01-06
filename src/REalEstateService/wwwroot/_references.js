@@ -46,3 +46,5 @@
 /// <reference path="lib/angular-sanitize/angular-sanitize.js" />
 /// <reference path="lib/angular-socialshare/angular-socialshare.js" />
 /// <reference path="lib/angular-utils-pagination/dirPagination.js" />
+/// <reference path="app/settings/settings.js" />
+/// <reference path="app/settings/settings.module.js" />
