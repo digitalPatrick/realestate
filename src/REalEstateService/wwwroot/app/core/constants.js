@@ -9,5 +9,4 @@
             API_URL: 'https://realestateservice.azure-mobile.net/',
             API_KEY: 'WwagBdZdumvDaYLGlNYWBovNCAAoBT42'
         });
-
 })();

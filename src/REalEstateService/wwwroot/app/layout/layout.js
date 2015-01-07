@@ -31,9 +31,23 @@
                 console.log(sessionStorage.loggedInUser);
                 console.log('Login successful');
                 $scope.isLoggedIn = true;
+                checkNewUser();
             }, function (err) {
             console.error('Azure Error: ' + err);
             });            
+        }
+
+        function checkNewUser()
+        {
+            Azureservice.invokeApi('LoginAPI', {
+                method: 'get',
+            })
+           .then(function (response) {
+               console.log('Here is my response object'); // remove in production
+               console.log(response); // remove in production
+           }, function (err) {
+               console.error('Azure Error: ' + err);
+           });
         }
     };
 
